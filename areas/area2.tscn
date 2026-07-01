@@ -1,0 +1,343 @@
+[gd_scene format=3 uid="uid://4lk08jbsmvwu"]
+
+[ext_resource type="Script" uid="uid://d1qo4y15rf1f7" path="res://scripts/area.gd" id="1_4ebh1"]
+[ext_resource type="Script" uid="uid://di3ooxsuchpr2" path="res://scripts/area_generator.gd" id="6_ekwld"]
+[ext_resource type="PackedScene" uid="uid://qk1y6qp8x7sb" path="res://blocks/voxelBlock.tscn" id="6_lilin"]
+[ext_resource type="Script" uid="uid://b8p8jsfetsyd6" path="res://scripts/exit_point.gd" id="8_rkj8r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+
+[node name="Area" type="Node3D" unique_id=2140720733]
+script = ExtResource("1_4ebh1")
+next_area_path = "res://areas/area.tscn"
+
+[node name="Blocks" type="Node3D" parent="." unique_id=2069672048]
+script = ExtResource("6_ekwld")
+voxel_block = ExtResource("6_lilin")
+
+[node name="VoxelBlock" parent="Blocks" unique_id=704057185 instance=ExtResource("6_lilin")]
+
+[node name="@StaticBody3D@555132" parent="Blocks" unique_id=43106075 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="@StaticBody3D@555133" parent="Blocks" unique_id=1182763874 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="@StaticBody3D@555134" parent="Blocks" unique_id=702219089 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="@StaticBody3D@555135" parent="Blocks" unique_id=1235905816 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="@StaticBody3D@555136" parent="Blocks" unique_id=1605145901 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="@StaticBody3D@555137" parent="Blocks" unique_id=167892323 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="@StaticBody3D@555138" parent="Blocks" unique_id=867047535 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+
+[node name="@StaticBody3D@555139" parent="Blocks" unique_id=1298383382 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="@StaticBody3D@555140" parent="Blocks" unique_id=1358320995 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="@StaticBody3D@555141" parent="Blocks" unique_id=486841271 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="@StaticBody3D@555142" parent="Blocks" unique_id=402822278 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="@StaticBody3D@555143" parent="Blocks" unique_id=361864852 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="@StaticBody3D@555144" parent="Blocks" unique_id=533175338 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="@StaticBody3D@555145" parent="Blocks" unique_id=830398884 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+
+[node name="@StaticBody3D@555146" parent="Blocks" unique_id=764225102 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+
+[node name="@StaticBody3D@555147" parent="Blocks" unique_id=146855075 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
+
+[node name="@StaticBody3D@555148" parent="Blocks" unique_id=772583436 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 7)
+
+[node name="@StaticBody3D@555149" parent="Blocks" unique_id=623978234 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 8)
+
+[node name="@StaticBody3D@555150" parent="Blocks" unique_id=1618564591 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)
+
+[node name="@StaticBody3D@555151" parent="Blocks" unique_id=1962347988 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="@StaticBody3D@555152" parent="Blocks" unique_id=17236668 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="@StaticBody3D@555153" parent="Blocks" unique_id=543213536 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="@StaticBody3D@555154" parent="Blocks" unique_id=499912461 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="@StaticBody3D@555155" parent="Blocks" unique_id=751184600 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+
+[node name="@StaticBody3D@555156" parent="Blocks" unique_id=1179913960 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5)
+
+[node name="@StaticBody3D@555157" parent="Blocks" unique_id=629612953 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+
+[node name="@StaticBody3D@555158" parent="Blocks" unique_id=1103714469 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7)
+
+[node name="@StaticBody3D@555159" parent="Blocks" unique_id=1884231310 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8)
+
+[node name="@StaticBody3D@555160" parent="Blocks" unique_id=1761006839 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 9)
+
+[node name="@StaticBody3D@555161" parent="Blocks" unique_id=148040912 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="@StaticBody3D@555162" parent="Blocks" unique_id=1371088501 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+
+[node name="@StaticBody3D@555163" parent="Blocks" unique_id=1163831038 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
+
+[node name="@StaticBody3D@555164" parent="Blocks" unique_id=1195391647 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+
+[node name="@StaticBody3D@555165" parent="Blocks" unique_id=1853943125 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4)
+
+[node name="@StaticBody3D@555166" parent="Blocks" unique_id=2017816046 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5)
+
+[node name="@StaticBody3D@555167" parent="Blocks" unique_id=1520133880 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 6)
+
+[node name="@StaticBody3D@555168" parent="Blocks" unique_id=618139413 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 7)
+
+[node name="@StaticBody3D@555169" parent="Blocks" unique_id=1208670583 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 8)
+
+[node name="@StaticBody3D@555170" parent="Blocks" unique_id=800228225 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 9)
+
+[node name="@StaticBody3D@555171" parent="Blocks" unique_id=1494721483 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="@StaticBody3D@555172" parent="Blocks" unique_id=1521540940 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
+
+[node name="@StaticBody3D@555173" parent="Blocks" unique_id=613893952 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+
+[node name="@StaticBody3D@555174" parent="Blocks" unique_id=1417937735 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+
+[node name="@StaticBody3D@555175" parent="Blocks" unique_id=1546748472 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="@StaticBody3D@555176" parent="Blocks" unique_id=2135868400 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 5)
+
+[node name="@StaticBody3D@555177" parent="Blocks" unique_id=1360574430 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+
+[node name="@StaticBody3D@555178" parent="Blocks" unique_id=732896620 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 7)
+
+[node name="@StaticBody3D@555179" parent="Blocks" unique_id=2095035816 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="@StaticBody3D@555180" parent="Blocks" unique_id=1186301483 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 9)
+
+[node name="@StaticBody3D@555181" parent="Blocks" unique_id=1348793838 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="@StaticBody3D@555182" parent="Blocks" unique_id=129260236 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+
+[node name="@StaticBody3D@555183" parent="Blocks" unique_id=1001064933 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 2)
+
+[node name="@StaticBody3D@555184" parent="Blocks" unique_id=1664190472 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3)
+
+[node name="@StaticBody3D@555185" parent="Blocks" unique_id=2012818196 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4)
+
+[node name="@StaticBody3D@555186" parent="Blocks" unique_id=337205415 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+
+[node name="@StaticBody3D@555187" parent="Blocks" unique_id=493825272 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 6)
+
+[node name="@StaticBody3D@555188" parent="Blocks" unique_id=1381004962 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 7)
+
+[node name="@StaticBody3D@555189" parent="Blocks" unique_id=2134978467 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 8)
+
+[node name="@StaticBody3D@555190" parent="Blocks" unique_id=1826473703 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 9)
+
+[node name="@StaticBody3D@555191" parent="Blocks" unique_id=1713345086 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="@StaticBody3D@555192" parent="Blocks" unique_id=400846534 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1)
+
+[node name="@StaticBody3D@555193" parent="Blocks" unique_id=1778517132 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
+
+[node name="@StaticBody3D@555194" parent="Blocks" unique_id=1257791924 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+
+[node name="@StaticBody3D@555195" parent="Blocks" unique_id=683664960 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
+
+[node name="@StaticBody3D@555196" parent="Blocks" unique_id=1333259406 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5)
+
+[node name="@StaticBody3D@555197" parent="Blocks" unique_id=22538373 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="@StaticBody3D@555198" parent="Blocks" unique_id=747937994 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 7)
+
+[node name="@StaticBody3D@555199" parent="Blocks" unique_id=1749628281 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 8)
+
+[node name="@StaticBody3D@555200" parent="Blocks" unique_id=524796941 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)
+
+[node name="@StaticBody3D@555201" parent="Blocks" unique_id=1979970406 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="@StaticBody3D@555202" parent="Blocks" unique_id=840115367 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1)
+
+[node name="@StaticBody3D@555203" parent="Blocks" unique_id=5320870 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 2)
+
+[node name="@StaticBody3D@555204" parent="Blocks" unique_id=692907035 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3)
+
+[node name="@StaticBody3D@555205" parent="Blocks" unique_id=468348281 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 4)
+
+[node name="@StaticBody3D@555206" parent="Blocks" unique_id=2182625 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
+
+[node name="@StaticBody3D@555207" parent="Blocks" unique_id=552755225 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6)
+
+[node name="@StaticBody3D@555208" parent="Blocks" unique_id=75203262 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 7)
+
+[node name="@StaticBody3D@555209" parent="Blocks" unique_id=1586382370 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 8)
+
+[node name="@StaticBody3D@555210" parent="Blocks" unique_id=608341582 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 9)
+
+[node name="@StaticBody3D@555211" parent="Blocks" unique_id=166398732 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="@StaticBody3D@555212" parent="Blocks" unique_id=2121363772 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 1)
+
+[node name="@StaticBody3D@555213" parent="Blocks" unique_id=1649330704 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2)
+
+[node name="@StaticBody3D@555214" parent="Blocks" unique_id=1390691023 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 3)
+
+[node name="@StaticBody3D@555215" parent="Blocks" unique_id=104819192 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="@StaticBody3D@555216" parent="Blocks" unique_id=213850567 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 5)
+
+[node name="@StaticBody3D@555217" parent="Blocks" unique_id=1315277667 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 6)
+
+[node name="@StaticBody3D@555218" parent="Blocks" unique_id=1747171410 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 7)
+
+[node name="@StaticBody3D@555219" parent="Blocks" unique_id=867890327 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="@StaticBody3D@555220" parent="Blocks" unique_id=1842740168 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 9)
+
+[node name="@StaticBody3D@555221" parent="Blocks" unique_id=1741914197 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="@StaticBody3D@555222" parent="Blocks" unique_id=258313133 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1)
+
+[node name="@StaticBody3D@555223" parent="Blocks" unique_id=1606580424 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 2)
+
+[node name="@StaticBody3D@555224" parent="Blocks" unique_id=280858953 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3)
+
+[node name="@StaticBody3D@555225" parent="Blocks" unique_id=1203768436 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 4)
+
+[node name="@StaticBody3D@555226" parent="Blocks" unique_id=1239257015 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5)
+
+[node name="@StaticBody3D@555227" parent="Blocks" unique_id=696424138 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 6)
+
+[node name="@StaticBody3D@555228" parent="Blocks" unique_id=1416296931 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 7)
+
+[node name="@StaticBody3D@555229" parent="Blocks" unique_id=2048787658 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 8)
+
+[node name="@StaticBody3D@555230" parent="Blocks" unique_id=936461185 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 9)
+
+[node name="SpawnPoint" type="Node3D" parent="." unique_id=1827310172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17876, 3.9423113, 4.285603)
+
+[node name="ExitPoint" type="Area3D" parent="." unique_id=164792984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19522858, 1.1446967, 4.2065015)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("8_rkj8r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitPoint" unique_id=1926553812]
+shape = SubResource("BoxShape3D_bhunq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ExitPoint" unique_id=1174297632]
+mesh = SubResource("BoxMesh_bhunq")
+
+[node name="VoxelBlock" parent="." unique_id=1326176946 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0773487, 1, 4.0393286)
+
+[node name="VoxelBlock2" parent="." unique_id=477820142 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.678046, 0.4204955, 5.98014)
+
+[node name="VoxelBlock3" parent="." unique_id=1773188620 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.278244, 0.7137351, 4.177472)
+
+[connection signal="body_entered" from="ExitPoint" to="ExitPoint" method="_on_body_entered"]

@@ -1,19 +1,22 @@
 [gd_scene format=3 uid="uid://dahxdoyd31kxs"]
 
-[ext_resource type="PackedScene" uid="uid://qk1y6qp8x7sb" path="res://obj/voxelBlock.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://qk1y6qp8x7sb" path="res://blocks/voxelBlock.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://b6rwc5wglqv7w" path="res://scripts/world.gd" id="1_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://cxhhd5vvm8xis" path="res://player.tscn" id="2_e2o6t"]
-[ext_resource type="Script" uid="uid://c3743wj21xl7e" path="res://player.gd" id="3_feb5d"]
+[ext_resource type="Script" uid="uid://c3743wj21xl7e" path="res://scripts/player.gd" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://bcuwc7p8hxtvj" path="res://areas/area.tscn" id="4_fc0e3"]
+[ext_resource type="Script" uid="uid://dgv4862ynu57j" path="res://scripts/camera_3d.gd" id="5_ryrav"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e2o6t"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_feb5d"]
+[sub_resource type="Sky" id="Sky_ryrav"]
 sky_material = SubResource("ProceduralSkyMaterial_e2o6t")
 
 [sub_resource type="Environment" id="Environment_fc0e3"]
 background_mode = 2
-sky = SubResource("Sky_feb5d")
+sky = SubResource("Sky_ryrav")
 glow_enabled = true
 
 [node name="Game" type="Node3D" unique_id=1480745105]
@@ -24,6 +27,7 @@ offset_right = 1149.0
 offset_bottom = 648.0
 stretch = true
 stretch_shrink = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=76450348]
 handle_input_locally = false
@@ -31,7 +35,20 @@ positional_shadow_atlas_size = 1024
 size = Vector2i(574, 324)
 render_target_update_mode = 4
 
-[node name="World" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1632707128]
+[node name="World" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1632707128 groups=["world"]]
+script = ExtResource("1_fc0e3")
+starting_area = ExtResource("4_fc0e3")
+
+[node name="Player" parent="SubViewportContainer/SubViewport/World" unique_id=2107791308 groups=["player"] instance=ExtResource("2_e2o6t")]
+disable_mode = 1
+script = ExtResource("3_feb5d")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/World/Player" unique_id=490602329]
+transform = Transform3D(0.70090973, -0.388464, 0.59818166, 0, 0.8386704, 0.5446393, -0.71325004, -0.38174298, 0.5878322, 20, 17.5, 20)
+projection = 1
+size = 10.0
+far = 250.0
+script = ExtResource("5_ryrav")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/World" unique_id=839940413]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -42,90 +59,307 @@ directional_shadow_mode = 0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/World" unique_id=1295257602]
 environment = SubResource("Environment_fc0e3")
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/World" unique_id=490602329]
-transform = Transform3D(0.70090973, -0.388464, 0.59818166, 0, 0.8386704, 0.5446393, -0.71325004, -0.38174298, 0.5878322, 10, 10, 10)
-projection = 1
-size = 10.0
-far = 250.0
-
-[node name="Blocks" type="Node3D" parent="SubViewportContainer/SubViewport/World" unique_id=518917722]
-
-[node name="voxelBlock" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=656263540 instance=ExtResource("1_80nbo")]
-
-[node name="voxelBlock2" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=885427336 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-
-[node name="voxelBlock3" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=721224827 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
-
-[node name="voxelBlock4" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=1720071764 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
-
-[node name="voxelBlock5" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=748931399 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
-
-[node name="voxelBlock6" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=2093424931 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-
-[node name="voxelBlock7" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=493320296 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
-
-[node name="voxelBlock8" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=490936194 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
-
-[node name="voxelBlock9" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=778646305 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
-
-[node name="voxelBlock10" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=712627868 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
-
-[node name="voxelBlock11" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=610901073 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
-
-[node name="voxelBlock12" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=308385634 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
-
-[node name="voxelBlock13" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=910233693 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
-
-[node name="voxelBlock14" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=1310185848 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
-
-[node name="voxelBlock15" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=1122702663 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
-
-[node name="voxelBlock16" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=1455582182 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
-
-[node name="voxelBlock17" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=2127812846 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
-
-[node name="voxelBlock18" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=766449112 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
-
-[node name="voxelBlock19" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=1017758001 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
-
-[node name="voxelBlock20" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=2071452714 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4)
-
-[node name="voxelBlock21" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=1935076503 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-
-[node name="voxelBlock22" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=1793042776 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
-
-[node name="voxelBlock23" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=957522215 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
-
-[node name="voxelBlock24" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=115326041 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
-
-[node name="voxelBlock25" parent="SubViewportContainer/SubViewport/World/Blocks" unique_id=443977318 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
-
 [node name="Entities" type="Node3D" parent="SubViewportContainer/SubViewport/World" unique_id=1889636610]
 
-[node name="Player" parent="SubViewportContainer/SubViewport/World/Entities" unique_id=2107791308 instance=ExtResource("2_e2o6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("3_feb5d")
+[node name="Area" parent="SubViewportContainer/SubViewport/World" unique_id=2140720733 instance=ExtResource("4_fc0e3")]
+
+[node name="VoxelBlock2" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="0" unique_id=736306036 instance=ExtResource("1_80nbo")]
+
+[node name="@StaticBody3D@477803" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="1" unique_id=1036837438 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="@StaticBody3D@477804" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="2" unique_id=190538755 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="@StaticBody3D@477805" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="3" unique_id=1131365213 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="@StaticBody3D@477806" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="4" unique_id=671915251 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="@StaticBody3D@477807" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="5" unique_id=1797936577 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="@StaticBody3D@477808" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="6" unique_id=659724068 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="@StaticBody3D@477809" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="7" unique_id=781480108 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+
+[node name="@StaticBody3D@477810" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="8" unique_id=591031426 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="@StaticBody3D@477811" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="9" unique_id=1598955491 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="@StaticBody3D@477812" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="10" unique_id=1854301632 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="@StaticBody3D@477813" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="11" unique_id=214609413 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="@StaticBody3D@477814" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="12" unique_id=496761726 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="@StaticBody3D@477815" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="13" unique_id=942434259 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="@StaticBody3D@477816" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="14" unique_id=1762056319 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+
+[node name="@StaticBody3D@477817" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="15" unique_id=94941342 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+
+[node name="@StaticBody3D@477818" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="16" unique_id=1101185367 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
+
+[node name="@StaticBody3D@477819" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="17" unique_id=689494174 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 7)
+
+[node name="@StaticBody3D@477820" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="18" unique_id=1216932461 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 8)
+
+[node name="@StaticBody3D@477821" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="19" unique_id=526654338 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)
+
+[node name="@StaticBody3D@477822" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="20" unique_id=1001047491 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="@StaticBody3D@477823" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="21" unique_id=2089303470 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="@StaticBody3D@477824" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="22" unique_id=1455453394 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="@StaticBody3D@477825" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="23" unique_id=266061423 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="@StaticBody3D@477826" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="24" unique_id=650068794 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+
+[node name="@StaticBody3D@477827" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="25" unique_id=1626567569 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5)
+
+[node name="@StaticBody3D@477828" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="26" unique_id=1665826359 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+
+[node name="@StaticBody3D@477829" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="27" unique_id=391617742 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7)
+
+[node name="@StaticBody3D@477830" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="28" unique_id=1562566829 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8)
+
+[node name="@StaticBody3D@477831" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="29" unique_id=2000829504 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 9)
+
+[node name="@StaticBody3D@477832" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="30" unique_id=309486147 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="@StaticBody3D@477833" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="31" unique_id=646228952 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+
+[node name="@StaticBody3D@477834" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="32" unique_id=303618757 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
+
+[node name="@StaticBody3D@477835" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="33" unique_id=792200452 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+
+[node name="@StaticBody3D@477836" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="34" unique_id=232737993 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4)
+
+[node name="@StaticBody3D@477837" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="35" unique_id=1570950683 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5)
+
+[node name="@StaticBody3D@477838" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="36" unique_id=1000364673 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 6)
+
+[node name="@StaticBody3D@477839" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="37" unique_id=2109713646 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 7)
+
+[node name="@StaticBody3D@477840" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="38" unique_id=1792629427 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 8)
+
+[node name="@StaticBody3D@477841" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="39" unique_id=1770107477 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 9)
+
+[node name="@StaticBody3D@477842" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="40" unique_id=773000234 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="@StaticBody3D@477843" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="41" unique_id=641349843 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
+
+[node name="@StaticBody3D@477844" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="42" unique_id=332775062 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+
+[node name="@StaticBody3D@477845" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="43" unique_id=1425197072 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+
+[node name="@StaticBody3D@477846" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="44" unique_id=1029973265 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="@StaticBody3D@477847" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="45" unique_id=1144634060 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 5)
+
+[node name="@StaticBody3D@477848" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="46" unique_id=1955374656 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+
+[node name="@StaticBody3D@477849" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="47" unique_id=1241758763 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 7)
+
+[node name="@StaticBody3D@477850" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="48" unique_id=1054508004 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="@StaticBody3D@477851" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="49" unique_id=315082526 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 9)
+
+[node name="@StaticBody3D@477852" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="50" unique_id=34550025 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="@StaticBody3D@477853" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="51" unique_id=283770974 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+
+[node name="@StaticBody3D@477854" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="52" unique_id=1974056087 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 2)
+
+[node name="@StaticBody3D@477855" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="53" unique_id=57959491 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3)
+
+[node name="@StaticBody3D@477856" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="54" unique_id=228625001 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4)
+
+[node name="@StaticBody3D@477857" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="55" unique_id=1748274203 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+
+[node name="@StaticBody3D@477858" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="56" unique_id=82396264 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 6)
+
+[node name="@StaticBody3D@477859" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="57" unique_id=1414006808 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 7)
+
+[node name="@StaticBody3D@477860" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="58" unique_id=1832585985 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 8)
+
+[node name="@StaticBody3D@477861" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="59" unique_id=1090558871 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 9)
+
+[node name="@StaticBody3D@477862" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="60" unique_id=35899522 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="@StaticBody3D@477863" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="61" unique_id=2116532053 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1)
+
+[node name="@StaticBody3D@477864" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="62" unique_id=248717226 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
+
+[node name="@StaticBody3D@477865" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="63" unique_id=871623810 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+
+[node name="@StaticBody3D@477866" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="64" unique_id=80520187 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
+
+[node name="@StaticBody3D@477867" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="65" unique_id=1028739732 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5)
+
+[node name="@StaticBody3D@477868" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="66" unique_id=738459174 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="@StaticBody3D@477869" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="67" unique_id=1477539678 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 7)
+
+[node name="@StaticBody3D@477870" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="68" unique_id=754737041 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 8)
+
+[node name="@StaticBody3D@477871" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="69" unique_id=1287376314 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)
+
+[node name="@StaticBody3D@477872" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="70" unique_id=979671274 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="@StaticBody3D@477873" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="71" unique_id=850628221 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1)
+
+[node name="@StaticBody3D@477874" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="72" unique_id=1961000310 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 2)
+
+[node name="@StaticBody3D@477875" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="73" unique_id=547125841 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3)
+
+[node name="@StaticBody3D@477876" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="74" unique_id=362430656 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 4)
+
+[node name="@StaticBody3D@477877" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="75" unique_id=2049882685 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
+
+[node name="@StaticBody3D@477878" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="76" unique_id=1988238342 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6)
+
+[node name="@StaticBody3D@477879" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="77" unique_id=333404641 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 7)
+
+[node name="@StaticBody3D@477880" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="78" unique_id=138152997 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 8)
+
+[node name="@StaticBody3D@477881" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="79" unique_id=1309479102 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 9)
+
+[node name="@StaticBody3D@477882" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="80" unique_id=537554583 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="@StaticBody3D@477883" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="81" unique_id=478154865 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 1)
+
+[node name="@StaticBody3D@477884" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="82" unique_id=642491628 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2)
+
+[node name="@StaticBody3D@477885" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="83" unique_id=1687166985 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 3)
+
+[node name="@StaticBody3D@477886" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="84" unique_id=111801886 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="@StaticBody3D@477887" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="85" unique_id=1264600367 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 5)
+
+[node name="@StaticBody3D@477888" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="86" unique_id=1882938657 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 6)
+
+[node name="@StaticBody3D@477889" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="87" unique_id=1735640440 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 7)
+
+[node name="@StaticBody3D@477890" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="88" unique_id=743352025 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="@StaticBody3D@477891" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="89" unique_id=108484641 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 9)
+
+[node name="@StaticBody3D@477892" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="90" unique_id=398745327 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="@StaticBody3D@477893" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="91" unique_id=1542418774 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1)
+
+[node name="@StaticBody3D@477894" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="92" unique_id=1592787450 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 2)
+
+[node name="@StaticBody3D@477895" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="93" unique_id=345128084 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3)
+
+[node name="@StaticBody3D@477896" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="94" unique_id=2035759151 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 4)
+
+[node name="@StaticBody3D@477897" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="95" unique_id=71265012 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5)
+
+[node name="@StaticBody3D@477898" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="96" unique_id=1664280492 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 6)
+
+[node name="@StaticBody3D@477899" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="97" unique_id=403457890 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 7)
+
+[node name="@StaticBody3D@477900" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="98" unique_id=1815160877 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 8)
+
+[node name="@StaticBody3D@477901" parent="SubViewportContainer/SubViewport/World/Area/Blocks" parent_id_path=PackedInt32Array(2140720733, 2069672048) index="99" unique_id=1148207734 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 9)
+
+[editable path="SubViewportContainer/SubViewport/World/Area"]
