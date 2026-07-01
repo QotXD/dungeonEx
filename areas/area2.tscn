@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://qk1y6qp8x7sb" path="res://blocks/voxelBlock.tscn" id="6_lilin"]
 [ext_resource type="Script" uid="uid://b8p8jsfetsyd6" path="res://scripts/exit_point.gd" id="8_rkj8r"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b2ksm"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
@@ -17,310 +19,714 @@ next_area_path = "res://areas/area.tscn"
 script = ExtResource("6_ekwld")
 voxel_block = ExtResource("6_lilin")
 
-[node name="VoxelBlock" parent="Blocks" unique_id=704057185 instance=ExtResource("6_lilin")]
+[node name="VoxelBlock" type="StaticBody3D" parent="Blocks" unique_id=704057185 instance=ExtResource("6_lilin")]
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555132" parent="Blocks" unique_id=43106075 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74868" type="StaticBody3D" parent="Blocks" unique_id=850468385 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555133" parent="Blocks" unique_id=1182763874 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74869" type="StaticBody3D" parent="Blocks" unique_id=244360758 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555134" parent="Blocks" unique_id=702219089 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74870" type="StaticBody3D" parent="Blocks" unique_id=849362654 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555135" parent="Blocks" unique_id=1235905816 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74871" type="StaticBody3D" parent="Blocks" unique_id=659900370 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555136" parent="Blocks" unique_id=1605145901 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74872" type="StaticBody3D" parent="Blocks" unique_id=1745316565 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555137" parent="Blocks" unique_id=167892323 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74873" type="StaticBody3D" parent="Blocks" unique_id=1663293854 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555138" parent="Blocks" unique_id=867047535 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74874" type="StaticBody3D" parent="Blocks" unique_id=647857470 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555139" parent="Blocks" unique_id=1298383382 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74875" type="StaticBody3D" parent="Blocks" unique_id=1816996783 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555140" parent="Blocks" unique_id=1358320995 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74876" type="StaticBody3D" parent="Blocks" unique_id=1546983856 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555141" parent="Blocks" unique_id=486841271 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74877" type="StaticBody3D" parent="Blocks" unique_id=1225364034 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74878" type="StaticBody3D" parent="Blocks" unique_id=249176897 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74879" type="StaticBody3D" parent="Blocks" unique_id=505175792 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74880" type="StaticBody3D" parent="Blocks" unique_id=98365223 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74881" type="StaticBody3D" parent="Blocks" unique_id=1701067592 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74882" type="StaticBody3D" parent="Blocks" unique_id=1090131081 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74883" type="StaticBody3D" parent="Blocks" unique_id=2078975876 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74884" type="StaticBody3D" parent="Blocks" unique_id=294342933 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74885" type="StaticBody3D" parent="Blocks" unique_id=1218295782 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 8)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74886" type="StaticBody3D" parent="Blocks" unique_id=1160441220 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 9)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74887" type="StaticBody3D" parent="Blocks" unique_id=255177828 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74888" type="StaticBody3D" parent="Blocks" unique_id=938848462 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 1)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74889" type="StaticBody3D" parent="Blocks" unique_id=1541271510 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74890" type="StaticBody3D" parent="Blocks" unique_id=70730485 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74891" type="StaticBody3D" parent="Blocks" unique_id=2037438236 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74892" type="StaticBody3D" parent="Blocks" unique_id=1428028820 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74893" type="StaticBody3D" parent="Blocks" unique_id=1186783025 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74894" type="StaticBody3D" parent="Blocks" unique_id=832124549 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 7)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74895" type="StaticBody3D" parent="Blocks" unique_id=1285668850 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 8)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74896" type="StaticBody3D" parent="Blocks" unique_id=1457907785 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 9)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74897" type="StaticBody3D" parent="Blocks" unique_id=92514946 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74898" type="StaticBody3D" parent="Blocks" unique_id=707481963 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 1)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74899" type="StaticBody3D" parent="Blocks" unique_id=1655190933 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 2)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74900" type="StaticBody3D" parent="Blocks" unique_id=60851438 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 3)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74901" type="StaticBody3D" parent="Blocks" unique_id=724798336 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 4)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74902" type="StaticBody3D" parent="Blocks" unique_id=1297084228 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 5)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74903" type="StaticBody3D" parent="Blocks" unique_id=20348434 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 6)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74904" type="StaticBody3D" parent="Blocks" unique_id=1698296463 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 7)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74905" type="StaticBody3D" parent="Blocks" unique_id=1818146582 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 8)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74906" type="StaticBody3D" parent="Blocks" unique_id=2052610304 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 9)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74907" type="StaticBody3D" parent="Blocks" unique_id=577674241 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74908" type="StaticBody3D" parent="Blocks" unique_id=704245847 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 1)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74909" type="StaticBody3D" parent="Blocks" unique_id=853523223 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 2)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74910" type="StaticBody3D" parent="Blocks" unique_id=1197123209 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 3)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74911" type="StaticBody3D" parent="Blocks" unique_id=409379364 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 4)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74912" type="StaticBody3D" parent="Blocks" unique_id=991664757 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 5)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74913" type="StaticBody3D" parent="Blocks" unique_id=103084664 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 6)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74914" type="StaticBody3D" parent="Blocks" unique_id=246284617 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 7)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74915" type="StaticBody3D" parent="Blocks" unique_id=1340286918 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 8)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74916" type="StaticBody3D" parent="Blocks" unique_id=1895288843 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 9)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74917" type="StaticBody3D" parent="Blocks" unique_id=1701357670 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555142" parent="Blocks" unique_id=402822278 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74918" type="StaticBody3D" parent="Blocks" unique_id=2052886732 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555143" parent="Blocks" unique_id=361864852 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74919" type="StaticBody3D" parent="Blocks" unique_id=1183583475 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555144" parent="Blocks" unique_id=533175338 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74920" type="StaticBody3D" parent="Blocks" unique_id=1827946217 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555145" parent="Blocks" unique_id=830398884 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74921" type="StaticBody3D" parent="Blocks" unique_id=674846923 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555146" parent="Blocks" unique_id=764225102 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74922" type="StaticBody3D" parent="Blocks" unique_id=1230906435 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555147" parent="Blocks" unique_id=146855075 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74923" type="StaticBody3D" parent="Blocks" unique_id=420906981 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555148" parent="Blocks" unique_id=772583436 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74924" type="StaticBody3D" parent="Blocks" unique_id=1659904537 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 7)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555149" parent="Blocks" unique_id=623978234 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74925" type="StaticBody3D" parent="Blocks" unique_id=190036346 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 8)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555150" parent="Blocks" unique_id=1618564591 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74926" type="StaticBody3D" parent="Blocks" unique_id=306592225 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555151" parent="Blocks" unique_id=1962347988 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74927" type="StaticBody3D" parent="Blocks" unique_id=2039951226 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74928" type="StaticBody3D" parent="Blocks" unique_id=1850223673 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74929" type="StaticBody3D" parent="Blocks" unique_id=1665925983 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74930" type="StaticBody3D" parent="Blocks" unique_id=267894386 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74931" type="StaticBody3D" parent="Blocks" unique_id=1332265921 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555152" parent="Blocks" unique_id=17236668 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74932" type="StaticBody3D" parent="Blocks" unique_id=1451191215 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555153" parent="Blocks" unique_id=543213536 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74933" type="StaticBody3D" parent="Blocks" unique_id=682818916 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555154" parent="Blocks" unique_id=499912461 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74934" type="StaticBody3D" parent="Blocks" unique_id=61640195 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555155" parent="Blocks" unique_id=751184600 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74935" type="StaticBody3D" parent="Blocks" unique_id=1994165138 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555156" parent="Blocks" unique_id=1179913960 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74936" type="StaticBody3D" parent="Blocks" unique_id=1359962388 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555157" parent="Blocks" unique_id=629612953 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74937" type="StaticBody3D" parent="Blocks" unique_id=503544543 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555158" parent="Blocks" unique_id=1103714469 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74938" type="StaticBody3D" parent="Blocks" unique_id=827825281 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555159" parent="Blocks" unique_id=1884231310 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74939" type="StaticBody3D" parent="Blocks" unique_id=2105347539 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555160" parent="Blocks" unique_id=1761006839 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74940" type="StaticBody3D" parent="Blocks" unique_id=848859464 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 9)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555161" parent="Blocks" unique_id=148040912 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74941" type="StaticBody3D" parent="Blocks" unique_id=572444995 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74942" type="StaticBody3D" parent="Blocks" unique_id=1181753989 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74943" type="StaticBody3D" parent="Blocks" unique_id=1758337657 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74944" type="StaticBody3D" parent="Blocks" unique_id=785457459 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74945" type="StaticBody3D" parent="Blocks" unique_id=851752760 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555162" parent="Blocks" unique_id=1371088501 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74946" type="StaticBody3D" parent="Blocks" unique_id=1460841968 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555163" parent="Blocks" unique_id=1163831038 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74947" type="StaticBody3D" parent="Blocks" unique_id=1753379788 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555164" parent="Blocks" unique_id=1195391647 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74948" type="StaticBody3D" parent="Blocks" unique_id=1831587700 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555165" parent="Blocks" unique_id=1853943125 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74949" type="StaticBody3D" parent="Blocks" unique_id=1321068940 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555166" parent="Blocks" unique_id=2017816046 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74950" type="StaticBody3D" parent="Blocks" unique_id=106734723 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555167" parent="Blocks" unique_id=1520133880 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74951" type="StaticBody3D" parent="Blocks" unique_id=2030933294 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 6)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555168" parent="Blocks" unique_id=618139413 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74952" type="StaticBody3D" parent="Blocks" unique_id=1799852382 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 7)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555169" parent="Blocks" unique_id=1208670583 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74953" type="StaticBody3D" parent="Blocks" unique_id=202714538 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 8)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555170" parent="Blocks" unique_id=800228225 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74954" type="StaticBody3D" parent="Blocks" unique_id=431756175 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 9)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555171" parent="Blocks" unique_id=1494721483 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74955" type="StaticBody3D" parent="Blocks" unique_id=1266781978 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74956" type="StaticBody3D" parent="Blocks" unique_id=2084416415 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74957" type="StaticBody3D" parent="Blocks" unique_id=1928937863 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74958" type="StaticBody3D" parent="Blocks" unique_id=131633371 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74959" type="StaticBody3D" parent="Blocks" unique_id=572454684 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555172" parent="Blocks" unique_id=1521540940 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74960" type="StaticBody3D" parent="Blocks" unique_id=609165088 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555173" parent="Blocks" unique_id=613893952 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74961" type="StaticBody3D" parent="Blocks" unique_id=1137706890 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555174" parent="Blocks" unique_id=1417937735 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74962" type="StaticBody3D" parent="Blocks" unique_id=1551236935 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555175" parent="Blocks" unique_id=1546748472 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74963" type="StaticBody3D" parent="Blocks" unique_id=2110346278 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555176" parent="Blocks" unique_id=2135868400 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74964" type="StaticBody3D" parent="Blocks" unique_id=1963495670 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 5)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555177" parent="Blocks" unique_id=1360574430 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74965" type="StaticBody3D" parent="Blocks" unique_id=264041348 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555178" parent="Blocks" unique_id=732896620 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74966" type="StaticBody3D" parent="Blocks" unique_id=230654191 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 7)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555179" parent="Blocks" unique_id=2095035816 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74967" type="StaticBody3D" parent="Blocks" unique_id=1239382774 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555180" parent="Blocks" unique_id=1186301483 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74968" type="StaticBody3D" parent="Blocks" unique_id=2119269574 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 9)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555181" parent="Blocks" unique_id=1348793838 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74969" type="StaticBody3D" parent="Blocks" unique_id=1591796817 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74970" type="StaticBody3D" parent="Blocks" unique_id=372511669 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74971" type="StaticBody3D" parent="Blocks" unique_id=1786079279 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74972" type="StaticBody3D" parent="Blocks" unique_id=376575191 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74973" type="StaticBody3D" parent="Blocks" unique_id=637862366 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555182" parent="Blocks" unique_id=129260236 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74974" type="StaticBody3D" parent="Blocks" unique_id=760541342 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555183" parent="Blocks" unique_id=1001064933 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74975" type="StaticBody3D" parent="Blocks" unique_id=867012726 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 2)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555184" parent="Blocks" unique_id=1664190472 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74976" type="StaticBody3D" parent="Blocks" unique_id=1316089501 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555185" parent="Blocks" unique_id=2012818196 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74977" type="StaticBody3D" parent="Blocks" unique_id=2063646666 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555186" parent="Blocks" unique_id=337205415 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74978" type="StaticBody3D" parent="Blocks" unique_id=482904320 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555187" parent="Blocks" unique_id=493825272 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74979" type="StaticBody3D" parent="Blocks" unique_id=964016500 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 6)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555188" parent="Blocks" unique_id=1381004962 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74980" type="StaticBody3D" parent="Blocks" unique_id=453514756 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 7)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555189" parent="Blocks" unique_id=2134978467 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74981" type="StaticBody3D" parent="Blocks" unique_id=507615800 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 8)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555190" parent="Blocks" unique_id=1826473703 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74982" type="StaticBody3D" parent="Blocks" unique_id=5135099 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 9)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555191" parent="Blocks" unique_id=1713345086 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74983" type="StaticBody3D" parent="Blocks" unique_id=1817719608 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74984" type="StaticBody3D" parent="Blocks" unique_id=512191793 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74985" type="StaticBody3D" parent="Blocks" unique_id=1771558749 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74986" type="StaticBody3D" parent="Blocks" unique_id=1322999574 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74987" type="StaticBody3D" parent="Blocks" unique_id=643975784 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555192" parent="Blocks" unique_id=400846534 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74988" type="StaticBody3D" parent="Blocks" unique_id=2137043705 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555193" parent="Blocks" unique_id=1778517132 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74989" type="StaticBody3D" parent="Blocks" unique_id=642146675 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555194" parent="Blocks" unique_id=1257791924 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74990" type="StaticBody3D" parent="Blocks" unique_id=2102741395 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555195" parent="Blocks" unique_id=683664960 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74991" type="StaticBody3D" parent="Blocks" unique_id=1041038669 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555196" parent="Blocks" unique_id=1333259406 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74992" type="StaticBody3D" parent="Blocks" unique_id=1692737296 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555197" parent="Blocks" unique_id=22538373 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74993" type="StaticBody3D" parent="Blocks" unique_id=672319423 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555198" parent="Blocks" unique_id=747937994 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74994" type="StaticBody3D" parent="Blocks" unique_id=996350119 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 7)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555199" parent="Blocks" unique_id=1749628281 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74995" type="StaticBody3D" parent="Blocks" unique_id=291390597 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 8)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555200" parent="Blocks" unique_id=524796941 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74996" type="StaticBody3D" parent="Blocks" unique_id=1639277791 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555201" parent="Blocks" unique_id=1979970406 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@74997" type="StaticBody3D" parent="Blocks" unique_id=118445687 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74998" type="StaticBody3D" parent="Blocks" unique_id=1685010476 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@74999" type="StaticBody3D" parent="Blocks" unique_id=904271769 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@75000" type="StaticBody3D" parent="Blocks" unique_id=874308869 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@75001" type="StaticBody3D" parent="Blocks" unique_id=934805413 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555202" parent="Blocks" unique_id=840115367 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75002" type="StaticBody3D" parent="Blocks" unique_id=742825874 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555203" parent="Blocks" unique_id=5320870 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75003" type="StaticBody3D" parent="Blocks" unique_id=530704709 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 2)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555204" parent="Blocks" unique_id=692907035 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75004" type="StaticBody3D" parent="Blocks" unique_id=44040393 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555205" parent="Blocks" unique_id=468348281 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75005" type="StaticBody3D" parent="Blocks" unique_id=62203745 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 4)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555206" parent="Blocks" unique_id=2182625 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75006" type="StaticBody3D" parent="Blocks" unique_id=238523389 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555207" parent="Blocks" unique_id=552755225 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75007" type="StaticBody3D" parent="Blocks" unique_id=1399763269 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555208" parent="Blocks" unique_id=75203262 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75008" type="StaticBody3D" parent="Blocks" unique_id=880189015 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 7)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555209" parent="Blocks" unique_id=1586382370 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75009" type="StaticBody3D" parent="Blocks" unique_id=1803902060 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 8)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555210" parent="Blocks" unique_id=608341582 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75010" type="StaticBody3D" parent="Blocks" unique_id=322536167 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 9)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555211" parent="Blocks" unique_id=166398732 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75011" type="StaticBody3D" parent="Blocks" unique_id=1220878262 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@75012" type="StaticBody3D" parent="Blocks" unique_id=734797207 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@75013" type="StaticBody3D" parent="Blocks" unique_id=27923411 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@75014" type="StaticBody3D" parent="Blocks" unique_id=1608525851 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 4, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@75015" type="StaticBody3D" parent="Blocks" unique_id=1348137084 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555212" parent="Blocks" unique_id=2121363772 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75016" type="StaticBody3D" parent="Blocks" unique_id=714174545 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 1)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555213" parent="Blocks" unique_id=1649330704 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75017" type="StaticBody3D" parent="Blocks" unique_id=1451237970 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555214" parent="Blocks" unique_id=1390691023 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75018" type="StaticBody3D" parent="Blocks" unique_id=239989983 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 3)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555215" parent="Blocks" unique_id=104819192 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75019" type="StaticBody3D" parent="Blocks" unique_id=299258680 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555216" parent="Blocks" unique_id=213850567 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75020" type="StaticBody3D" parent="Blocks" unique_id=1796530173 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 5)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555217" parent="Blocks" unique_id=1315277667 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75021" type="StaticBody3D" parent="Blocks" unique_id=1491024141 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 6)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555218" parent="Blocks" unique_id=1747171410 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75022" type="StaticBody3D" parent="Blocks" unique_id=818794315 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 7)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555219" parent="Blocks" unique_id=867890327 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75023" type="StaticBody3D" parent="Blocks" unique_id=2109251925 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555220" parent="Blocks" unique_id=1842740168 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75024" type="StaticBody3D" parent="Blocks" unique_id=1398861930 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 9)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555221" parent="Blocks" unique_id=1741914197 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75025" type="StaticBody3D" parent="Blocks" unique_id=730391307 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@75026" type="StaticBody3D" parent="Blocks" unique_id=2078422080 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@75027" type="StaticBody3D" parent="Blocks" unique_id=1661173120 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@75028" type="StaticBody3D" parent="Blocks" unique_id=1171560229 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@75029" type="StaticBody3D" parent="Blocks" unique_id=1379733386 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555222" parent="Blocks" unique_id=258313133 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75030" type="StaticBody3D" parent="Blocks" unique_id=356246439 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555223" parent="Blocks" unique_id=1606580424 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75031" type="StaticBody3D" parent="Blocks" unique_id=741948376 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 2)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555224" parent="Blocks" unique_id=280858953 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75032" type="StaticBody3D" parent="Blocks" unique_id=1568508675 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555225" parent="Blocks" unique_id=1203768436 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75033" type="StaticBody3D" parent="Blocks" unique_id=889929838 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 4)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555226" parent="Blocks" unique_id=1239257015 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75034" type="StaticBody3D" parent="Blocks" unique_id=1136608472 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555227" parent="Blocks" unique_id=696424138 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75035" type="StaticBody3D" parent="Blocks" unique_id=727507334 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 6)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555228" parent="Blocks" unique_id=1416296931 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75036" type="StaticBody3D" parent="Blocks" unique_id=1328541263 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 7)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555229" parent="Blocks" unique_id=2048787658 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75037" type="StaticBody3D" parent="Blocks" unique_id=1982048715 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 8)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
-[node name="@StaticBody3D@555230" parent="Blocks" unique_id=936461185 instance=ExtResource("6_lilin")]
+[node name="@StaticBody3D@75038" type="StaticBody3D" parent="Blocks" unique_id=590101956 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 9)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@75039" type="StaticBody3D" parent="Blocks" unique_id=1050721285 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@75040" type="StaticBody3D" parent="Blocks" unique_id=250624054 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@75041" type="StaticBody3D" parent="Blocks" unique_id=369686701 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
+
+[node name="@StaticBody3D@75042" type="StaticBody3D" parent="Blocks" unique_id=1557332256 instance=ExtResource("6_lilin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4, 0)
+physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
 [node name="SpawnPoint" type="Node3D" parent="." unique_id=1827310172]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17876, 3.9423113, 4.285603)
 
 [node name="ExitPoint" type="Area3D" parent="." unique_id=164792984]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19522858, 1.1446967, 4.2065015)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2975917, 1.1446967, 4.2065015)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("8_rkj8r")

@@ -16,16 +16,30 @@ func _ready():
 	if not Engine.is_editor_hint():
 		build_room()
 		generate_blocks()
-
+		
+#MAP BLOCKS
 func build_room():
 	voxel_data = []
-	for x in range(10):
+	var width = 10
+	var height = 5
+	var depth = 10
+	
+	for x in range(width):
 		voxel_data.append([])
-		for y in range(1):
+		for y in range(height):
 			voxel_data[x].append([])
-			for z in range(10):
-				voxel_data[x][y].append(1)
+			for z in range(depth):
+				# Floor stays the same
+				var is_floor = (y == 0)
+				
+				# ONLY make walls where X is 0 or Z is 0
+				var is_wall = (x == 0 or z == 0)
+				if is_floor or is_wall:
+					voxel_data[x][y].append(1)
+				else:
+					voxel_data[x][y].append(0)
 
+#RENDER BLOCKS
 func generate_blocks():
 	for child in get_children():
 		child.free()
