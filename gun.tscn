@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c5pxjj6j0w2ns"]
+
+[ext_resource type="Script" uid="uid://ci1pnd5kkjrmv" path="res://scripts/gun.gd" id="1_vk1bi"]
+[ext_resource type="PackedScene" uid="uid://di8fttpbtmjpn" path="res://bullet.tscn" id="2_dk5gl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+
+[node name="Gun" type="Node3D" unique_id=2124190133]
+script = ExtResource("1_vk1bi")
+bullet = ExtResource("2_dk5gl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=204119963]
+transform = Transform3D(0.155, 0, 0, 0, 0.155, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("BoxMesh_bhunq")
+
+[node name="Muzzle" type="Marker3D" parent="." unique_id=1209206794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.18484387)
+
+[node name="FireRateTimer" type="Timer" parent="." unique_id=156368693]
+wait_time = 0.4
+one_shot = true
