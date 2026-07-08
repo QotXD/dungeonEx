@@ -2,13 +2,9 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b2ksm"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2ksm"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fc0e3"]
-
 [sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4dsa2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ewfib"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4dsa2"]
 
@@ -16,10 +12,8 @@
 physics_material_override = SubResource("PhysicsMaterial_b2ksm")
 
 [node name="BoxMesh" type="MeshInstance3D" parent="." unique_id=601585240]
-material_override = SubResource("StandardMaterial3D_b2ksm")
-material_overlay = SubResource("StandardMaterial3D_fc0e3")
 mesh = SubResource("BoxMesh_bhunq")
-surface_material_override/0 = SubResource("StandardMaterial3D_4dsa2")
+surface_material_override/0 = SubResource("StandardMaterial3D_ewfib")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=405832004]
 shape = SubResource("BoxShape3D_4dsa2")

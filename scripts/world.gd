@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var starting_area: PackedScene
-@onready var area_container = $Area
+@onready var area_container = $AreaContainer
 @onready var player = $Player
 
 func _ready():
