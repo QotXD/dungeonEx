@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @onready var player = $Player
+@onready var Hitbox: Area3D = $Hitbox
 
 const SPEED = 1.33
 const JUMP_VELOCITY = 4.0
@@ -11,35 +12,45 @@ const LOW_JUMP_GRAVITY_MULT = 3.2
 const MAX_HEALTH = 3
 var health = MAX_HEALTH
 
-const DAMAGE = 3.5
+# COMBAT STATS
+const DAMAGE = 3.0
 const ATTACK_SPEED = 1.0
 const CRITICAL_DAMAGE = 2.0
 const CRITICAL_CHANCE = 1.0
+@export var knockback_force: float = 9.0
 
-func take_damage(amount: float) -> void:
-	health -= amount
-	print("Enemy took damage, health: ", health)
-	
-	if health <= 0:
-		die()
-
-#death
-func die() -> void:
-	queue_free()
-
-
-func _ready():
-	#check for player group
+func _ready() -> void:
+	# Locate player in the scene
 	player = get_tree().get_first_node_in_group("player")
+	
+	# Connect Hitbox signal for INSTANT Frame 0 damage/knockback on touch
+	if Hitbox:
+		Hitbox.body_entered.connect(_on_hitbox_body_entered)
+
+# 1. Fires INSTANTLY on frame 0 of contact
+func _on_hitbox_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		if body.has_method("damage"):
+			body.damage(DAMAGE, global_position, knockback_force)
+
+# 2. Backup check for continuous contact (standing against enemy)
+func check_and_deal_damage() -> void:
+	if not Hitbox:
+		return
+
+	for body in Hitbox.get_overlapping_bodies():
+		if body.is_in_group("player"):
+			if body.has_method("damage"):
+				body.damage(DAMAGE, global_position, knockback_force)
 
 func _physics_process(delta: float) -> void:
-	# gravity
+	# Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * FALL_GRAVITY_MULT * delta
 	else:
 		velocity.y = 0
 
-	# movement
+	# Movement / Chasing
 	if player and is_instance_valid(player):
 		var target_pos = player.global_position
 		target_pos.y = global_position.y 
@@ -59,3 +70,18 @@ func _physics_process(delta: float) -> void:
 		velocity.z = 0
 
 	move_and_slide()
+	
+	# Continuous damage check while standing inside hitbox
+	check_and_deal_damage()
+
+# Enemy receives damage
+func take_damage(amount: float) -> void:
+	health -= amount
+	print("Enemy took damage, health: ", health)
+	
+	if health <= 0:
+		die()
+
+# Death
+func die() -> void:
+	queue_free()

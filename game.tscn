@@ -3,20 +3,24 @@
 [ext_resource type="Script" uid="uid://b6rwc5wglqv7w" path="res://scripts/world.gd" id="1_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://cxhhd5vvm8xis" path="res://player.tscn" id="2_e2o6t"]
 [ext_resource type="Script" uid="uid://c3743wj21xl7e" path="res://scripts/player.gd" id="3_feb5d"]
+[ext_resource type="Texture2D" uid="uid://c6cjw20jpetax" path="res://background.jpg" id="3_ryrav"]
 [ext_resource type="PackedScene" uid="uid://bcuwc7p8hxtvj" path="res://areas/area.tscn" id="4_fc0e3"]
 [ext_resource type="Script" uid="uid://dgv4862ynu57j" path="res://scripts/camera_3d.gd" id="5_ryrav"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e2o6t"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ryrav"]
+sky_top_color = Color(0.2192725, 0.44128796, 0.77923805, 1)
+sky_horizon_color = Color(0.45343822, 0.6613477, 0.95771664, 1)
+ground_bottom_color = Color(0.38761944, 0.5736561, 0.84658545, 1)
+ground_horizon_color = Color(0.437107, 0.6766858, 0.9059247, 1)
 
-[sub_resource type="Sky" id="Sky_ryrav"]
-sky_material = SubResource("ProceduralSkyMaterial_e2o6t")
+[sub_resource type="Sky" id="Sky_2r0jt"]
+sky_material = SubResource("ProceduralSkyMaterial_ryrav")
+process_mode = 3
 
-[sub_resource type="Environment" id="Environment_fc0e3"]
+[sub_resource type="Environment" id="Environment_bhunq"]
 background_mode = 2
-sky = SubResource("Sky_ryrav")
-glow_enabled = true
+sky = SubResource("Sky_2r0jt")
+sky_rotation = Vector3(-0.17453292, -1.5812683, -0.17453292)
 
 [node name="Game" type="Node3D" unique_id=1480745105]
 
@@ -67,7 +71,11 @@ shadow_normal_bias = 7.5
 directional_shadow_mode = 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/World" unique_id=1295257602]
-environment = SubResource("Environment_fc0e3")
+environment = SubResource("Environment_bhunq")
+
+[node name="Background" type="Sprite3D" parent="SubViewportContainer/SubViewport/World" unique_id=1948378142]
+transform = Transform3D(9.1925335, -4.4242535, 6.318489, 0, 9.829824, 6.8829174, -7.713451, -5.2726207, 7.530082, -20, -20, -20)
+texture = ExtResource("3_ryrav")
 
 [node name="Entities" type="Node3D" parent="SubViewportContainer/SubViewport/World" unique_id=1889636610]
 
