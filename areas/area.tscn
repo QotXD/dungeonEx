@@ -17,6 +17,16 @@ albedo_color = Color(0, 0.6862745, 0.95686275, 1)
 material = SubResource("StandardMaterial3D_vef74")
 flip_faces = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_riqys"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_riqys"]
+
+[sub_resource type="Skin" id="Skin_bhunq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6f8o3"]
+albedo_color = Color(0.85882354, 0.29803923, 0, 1)
+subsurf_scatter_transmittance_color = Color(0.85882354, 0.101960786, 0, 1)
+
 [node name="Area" type="Node3D" unique_id=2140720733]
 script = ExtResource("1_3cia8")
 next_area_path = "res://areas/area2.tscn"
@@ -744,10 +754,25 @@ shape = SubResource("BoxShape3D_bhunq")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_bhunq")
 
-[node name="Enemy" parent="." unique_id=712027545 instance=ExtResource("5_nltih")]
+[node name="DoorBlocker" type="StaticBody3D" parent="ExitPoint" unique_id=2018723675]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitPoint/DoorBlocker" unique_id=1746142450]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_riqys")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ExitPoint/DoorBlocker" unique_id=970810937]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+mesh = SubResource("BoxMesh_riqys")
+skin = SubResource("Skin_bhunq")
+surface_material_override/0 = SubResource("StandardMaterial3D_6f8o3")
+
+[node name="Enemy" parent="." unique_id=712027545 groups=["enemy"] instance=ExtResource("5_nltih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2669945, 0.7975, 2.7256584)
 
-[node name="Enemy2" parent="." unique_id=1526892677 instance=ExtResource("5_nltih")]
+[node name="Enemy2" parent="." unique_id=1526892677 groups=["enemy"] instance=ExtResource("5_nltih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2925024, 0.79749906, 2.0899801)
 
 [connection signal="body_entered" from="ExitPoint" to="ExitPoint" method="_on_body_entered"]

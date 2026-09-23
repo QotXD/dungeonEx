@@ -17,6 +17,16 @@ albedo_color = Color(0, 0.6862745, 0.95686275, 1)
 material = SubResource("StandardMaterial3D_vef74")
 flip_faces = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_t1wup"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2y6id"]
+
+[sub_resource type="Skin" id="Skin_qiogf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekwld"]
+albedo_color = Color(0.85882354, 0.29803923, 0, 1)
+subsurf_scatter_transmittance_color = Color(0.85882354, 0.101960786, 0, 1)
+
 [node name="Area" type="Node3D" unique_id=2140720733]
 script = ExtResource("1_4ebh1")
 next_area_path = "res://areas/area.tscn"
@@ -744,6 +754,21 @@ shape = SubResource("BoxShape3D_bhunq")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_bhunq")
 
+[node name="DoorBlocker" type="StaticBody3D" parent="ExitPoint" unique_id=299616957]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitPoint/DoorBlocker" unique_id=720080721]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_t1wup")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ExitPoint/DoorBlocker" unique_id=1370842262]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+mesh = SubResource("BoxMesh_2y6id")
+skin = SubResource("Skin_qiogf")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekwld")
+
 [node name="VoxelBlock" parent="." unique_id=1326176946 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0773487, 1, 4.0393286)
 
@@ -753,13 +778,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.678046, 0.4204955, 5.98014)
 [node name="VoxelBlock3" parent="." unique_id=1773188620 instance=ExtResource("6_lilin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.278244, 0.7137351, 4.177472)
 
-[node name="Enemy" parent="." unique_id=712027545 instance=ExtResource("5_t1wup")]
+[node name="Enemy" parent="." unique_id=712027545 groups=["enemy"] instance=ExtResource("5_t1wup")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.602001, 0.7975, 8.64542)
 
-[node name="Enemy2" parent="." unique_id=317374289 instance=ExtResource("5_t1wup")]
+[node name="Enemy2" parent="." unique_id=317374289 groups=["enemy"] instance=ExtResource("5_t1wup")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8190165, 0.7975, 8.573808)
 
-[node name="Enemy3" parent="." unique_id=1577994111 instance=ExtResource("5_t1wup")]
+[node name="Enemy3" parent="." unique_id=1577994111 groups=["enemy"] instance=ExtResource("5_t1wup")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.625855, 0.7975, 1.6139917)
 
 [connection signal="body_entered" from="ExitPoint" to="ExitPoint" method="_on_body_entered"]

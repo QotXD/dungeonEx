@@ -83,5 +83,7 @@ func take_damage(amount: float) -> void:
 		die()
 
 # Death
+signal died
 func die() -> void:
+	died.emit()
 	queue_free()
