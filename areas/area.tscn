@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://qk1y6qp8x7sb" path="res://blocks/voxelBlock.tscn" id="2_qrqd3"]
 [ext_resource type="Script" uid="uid://b8p8jsfetsyd6" path="res://scripts/exit_point.gd" id="3_b2ksm"]
 [ext_resource type="PackedScene" uid="uid://dgehp7y1jvby4" path="res://enemy.tscn" id="5_nltih"]
+[ext_resource type="PackedScene" uid="uid://dyo8wr84kfq6f" path="res://blocks/box.tscn" id="6_d2p4x"]
+[ext_resource type="PackedScene" uid="uid://h8hfryihgh6g" path="res://pickup_coin.tscn" id="7_0etmp"]
+[ext_resource type="PackedScene" uid="uid://d7xf6cyb488y" path="res://pickup_health.tscn" id="7_x6k27"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b2ksm"]
 
@@ -774,5 +777,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2669945, 0.7975, 2.7256584)
 
 [node name="Enemy2" parent="." unique_id=1526892677 groups=["enemy"] instance=ExtResource("5_nltih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2925024, 0.79749906, 2.0899801)
+
+[node name="BreakableBox" parent="." unique_id=1047809777 instance=ExtResource("6_d2p4x")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.716225, 0.7499995, 8.953578)
+coin_scene = ExtResource("7_0etmp")
+health_scene = ExtResource("7_x6k27")
+
+[node name="BreakableBox2" parent="." unique_id=344586410 instance=ExtResource("6_d2p4x")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.5653453, 0.80308723, 8.983557)
+coin_scene = ExtResource("7_0etmp")
+health_scene = ExtResource("7_x6k27")
+
+[node name="BreakableBox3" parent="." unique_id=2120675094 instance=ExtResource("6_d2p4x")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.38711, 0.85039186, 9.0530405)
+coin_scene = ExtResource("7_0etmp")
+health_scene = ExtResource("7_x6k27")
 
 [connection signal="body_entered" from="ExitPoint" to="ExitPoint" method="_on_body_entered"]

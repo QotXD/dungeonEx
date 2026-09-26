@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dgehp7y1jvby4" path="res://enemy.tscn" id="5_t1wup"]
 [ext_resource type="Script" uid="uid://di3ooxsuchpr2" path="res://scripts/area_generator.gd" id="6_ekwld"]
 [ext_resource type="PackedScene" uid="uid://qk1y6qp8x7sb" path="res://blocks/voxelBlock.tscn" id="6_lilin"]
+[ext_resource type="PackedScene" uid="uid://dyo8wr84kfq6f" path="res://blocks/box.tscn" id="6_qiogf"]
+[ext_resource type="PackedScene" uid="uid://d7xf6cyb488y" path="res://pickup_health.tscn" id="7_ekwld"]
+[ext_resource type="PackedScene" uid="uid://h8hfryihgh6g" path="res://pickup_coin.tscn" id="7_rkj8r"]
 [ext_resource type="Script" uid="uid://b8p8jsfetsyd6" path="res://scripts/exit_point.gd" id="8_rkj8r"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b2ksm"]
@@ -786,5 +789,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8190165, 0.7975, 8.573808)
 
 [node name="Enemy3" parent="." unique_id=1577994111 groups=["enemy"] instance=ExtResource("5_t1wup")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.625855, 0.7975, 1.6139917)
+
+[node name="BreakableBox" parent="." unique_id=1047809777 instance=ExtResource("6_qiogf")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.969786, 0.7499995, 7.0405073)
+coin_scene = ExtResource("7_rkj8r")
+health_scene = ExtResource("7_ekwld")
+
+[node name="BreakableBox2" parent="." unique_id=1069215156 instance=ExtResource("6_qiogf")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.939205, 0.75, 6.3213015)
+coin_scene = ExtResource("7_rkj8r")
+health_scene = ExtResource("7_ekwld")
+
+[node name="BreakableBox3" parent="." unique_id=1776557201 instance=ExtResource("6_qiogf")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.9775305, 0.75, 5.615177)
+coin_scene = ExtResource("7_rkj8r")
+health_scene = ExtResource("7_ekwld")
+
+[node name="BreakableBox4" parent="." unique_id=1941063144 instance=ExtResource("6_qiogf")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.4154043, 0.75000095, 8.829127)
+coin_scene = ExtResource("7_rkj8r")
+health_scene = ExtResource("7_ekwld")
+
+[node name="BreakableBox5" parent="." unique_id=696237575 instance=ExtResource("6_qiogf")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.61863, 0.75, 8.906031)
+coin_scene = ExtResource("7_rkj8r")
+health_scene = ExtResource("7_ekwld")
+
+[node name="BreakableBox6" parent="." unique_id=1616347068 instance=ExtResource("6_qiogf")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.8489428, 0.75, 8.91545)
+coin_scene = ExtResource("7_rkj8r")
+health_scene = ExtResource("7_ekwld")
 
 [connection signal="body_entered" from="ExitPoint" to="ExitPoint" method="_on_body_entered"]

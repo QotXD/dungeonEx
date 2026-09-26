@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://h8hfryihgh6g"]
+
+[ext_resource type="Script" uid="uid://boxd5ipebs50" path="res://scripts/pickup_coin.gd" id="1_csmr6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_riqys"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qr0ht"]
+albedo_color = Color(1, 0.7647059, 0, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bhunq"]
+
+[node name="pickup_coin" type="Area3D" unique_id=1464220232]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_mask = 16
+script = ExtResource("1_csmr6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1740491364]
+mesh = SubResource("CapsuleMesh_riqys")
+surface_material_override/0 = SubResource("StandardMaterial3D_qr0ht")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1546665367]
+shape = SubResource("CapsuleShape3D_bhunq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

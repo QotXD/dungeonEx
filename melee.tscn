@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://k2whaugk54vo"]
+
+[ext_resource type="Script" uid="uid://bdy26larfj8f7" path="res://scripts/melee.gd" id="1_gt438"]
+[ext_resource type="PackedScene" uid="uid://um1pw47lfuvj" path="res://melee_bullet.tscn" id="2_bg0yx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bg0yx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5l7l7"]
+albedo_color = Color(0.05882353, 0.72156864, 0.3254902, 1)
+
+[node name="Melee" type="Node3D" unique_id=1846495926]
+script = ExtResource("1_gt438")
+melee_bullet = ExtResource("2_bg0yx")
+melee_reach = 0.7
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1286466179]
+transform = Transform3D(0.155, 0, 0, 0, 0.155, 0, 0, 0, 0.5, 0, 0, -0.12)
+visible = false
+mesh = SubResource("BoxMesh_bg0yx")
+surface_material_override/0 = SubResource("StandardMaterial3D_5l7l7")
+
+[node name="FireRateTimer" type="Timer" parent="." unique_id=293121640]
+one_shot = true
+
+[node name="Muzzle" type="Marker3D" parent="." unique_id=1267235942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4)

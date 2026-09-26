@@ -22,6 +22,15 @@ background_mode = 2
 sky = SubResource("Sky_2r0jt")
 sky_rotation = Vector3(-0.17453292, -1.5812683, -0.17453292)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_bhunq"]
+viewport_path = NodePath("SubViewportContainer/SubViewport")
+
+[sub_resource type="LabelSettings" id="LabelSettings_j5wjh"]
+outline_size = 2
+outline_color = Color(1, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(1, 0, 0, 0)
+
 [node name="Game" type="Node3D" unique_id=1480745105]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=625054243]
@@ -54,15 +63,25 @@ far = 250.0
 script = ExtResource("5_ryrav")
 
 [node name="HealthBar" type="ProgressBar" parent="SubViewportContainer/SubViewport/World/Player" unique_id=1437277846]
-offset_right = 121.0
-offset_bottom = 27.0
+offset_left = 4.5
+offset_top = 6.5
+offset_right = 125.5
+offset_bottom = 33.5
 max_value = 20.0
 step = 1.0
 show_percentage = false
 
 [node name="HealthLabel" type="Label" parent="SubViewportContainer/SubViewport/World/Player" unique_id=923306311]
-offset_right = 121.0
-offset_bottom = 27.0
+offset_left = 4.5
+offset_top = 6.5
+offset_right = 125.5
+offset_bottom = 33.5
+
+[node name="CoinLabel" type="Label" parent="SubViewportContainer/SubViewport/World/Player" unique_id=37273712]
+offset_left = 4.5
+offset_top = 35.0
+offset_right = 59.0
+offset_bottom = 62.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/World" unique_id=839940413]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -82,3 +101,19 @@ texture = ExtResource("3_ryrav")
 [node name="AreaContainer" type="Node3D" parent="SubViewportContainer/SubViewport/World" unique_id=1971266528]
 
 [node name="Area" parent="SubViewportContainer/SubViewport/World/AreaContainer" unique_id=2140720733 instance=ExtResource("4_fc0e3")]
+
+[node name="deathScreen" type="CanvasLayer" parent="SubViewportContainer/SubViewport" unique_id=962161124 groups=["death_screen"]]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport/deathScreen" unique_id=543000791]
+offset_right = 575.0
+offset_bottom = 323.5
+texture = SubResource("ViewportTexture_bhunq")
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/deathScreen" unique_id=227978347]
+offset_right = 576.0
+offset_bottom = 324.0
+text = "You Died - Press R to Retry"
+label_settings = SubResource("LabelSettings_j5wjh")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -7,7 +7,7 @@ const FALL_GRAVITY_MULT = 1.2
 const LOW_JUMP_GRAVITY_MULT = 3.2
 
 #HEALTH STATS
-const MAX_HEALTH = 20
+const MAX_HEALTH = 10
 var health = MAX_HEALTH
 @export var iframe_duration: float = 0.5 # Seconds invincible after hit
 var is_invincible: bool = false
@@ -22,22 +22,43 @@ const ATTACK_SPEED = 1.0
 const CRITICAL_DAMAGE = 2.0
 const CRITICAL_CHANCE = 1.0
 
+#MONEY
+var coins := 0
+
+#RETRY
+var is_dead := false
+
+
 
 #HEALTH
 func _ready() -> void:
 	update_health_ui()
+	update_coin_ui()
 	$HealthBar.max_value = MAX_HEALTH
-	
 	
 func update_health_ui():
 	set_health_label()
 	set_health_bar()
+	
+func heal(amount: float) -> void:
+	health = min(health + amount, MAX_HEALTH)
+	update_health_ui()
 	
 func set_health_label() -> void:
 	$HealthLabel.text = "Health: %s" % health
 	
 func set_health_bar() -> void:
 	$HealthBar.value = health
+	
+
+#MONEY
+func add_coins(amount: int) -> void:
+	coins += amount
+	update_coin_ui()
+
+func update_coin_ui() -> void:
+	$CoinLabel.text = "Coins: %s" % coins
+
 
 #DAMAGE FROM ENEMIEs
 func damage(amount: float, source_position: Vector3 = Vector3.ZERO, knockback_force: float = 12.0) -> void:
@@ -69,14 +90,23 @@ func damage(amount: float, source_position: Vector3 = Vector3.ZERO, knockback_fo
 
 #DEATH
 func die() -> void:
+	is_dead = true
 	Engine.time_scale = 0.5
-	await get_tree().create_timer(2.0, false, false, true).timeout
-	Engine.time_scale = 1.0
-	get_tree().reload_current_scene()
+	var death_screen = get_tree().get_first_node_in_group("death_screen")
+	print("Found death screen: ", death_screen)
+	if death_screen:
+		death_screen.show()
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if is_dead and event.is_action_pressed("retry"):
+		Engine.time_scale = 1.0
+		get_tree().reload_current_scene()
 
 
 #MOVEMENT
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		return
 	# 1. Decay knockback smoothly over time
 	if knockback_velocity.length() > 0.1:
 		knockback_velocity = knockback_velocity.move_toward(Vector3.ZERO, knockback_decay * delta)

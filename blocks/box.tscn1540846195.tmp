@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dyo8wr84kfq6f"]
+
+[ext_resource type="Script" uid="uid://dydwpigsrwmqh" path="res://scripts/box.gd" id="1_1s18p"]
+[ext_resource type="PackedScene" uid="uid://d7xf6cyb488y" path="res://pickup_health.tscn" id="2_pin3t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lec1x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lec1x"]
+albedo_color = Color(0.7144973, 0.4145875, 5.7756904e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+
+[node name="BreakableBox" type="StaticBody3D" unique_id=1047809777]
+script = ExtResource("1_1s18p")
+
+[node name="pickup_health" parent="." unique_id=157783545 instance=ExtResource("2_pin3t")]
+
+[node name="BoxShape3D" type="CollisionShape3D" parent="." unique_id=27582853]
+shape = SubResource("BoxShape3D_lec1x")
+
+[node name="BoxMesh" type="MeshInstance3D" parent="." unique_id=1001995091]
+material_override = SubResource("StandardMaterial3D_lec1x")
+mesh = SubResource("BoxMesh_bhunq")

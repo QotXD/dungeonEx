@@ -1,9 +1,9 @@
 extends Node3D
 
-@export var bullet: PackedScene
+@export var melee_bullet: PackedScene
 @export var orbit_radius: float = 0.5
+@export var melee_reach: float = 1.0
 
-@onready var muzzle = $Muzzle
 @onready var fire_timer = $FireRateTimer
 
 var player: Node3D
@@ -15,11 +15,11 @@ func _physics_process(_delta):
 	if player.is_dead:
 		return
 	_handle_aiming()
-	
-	if Input.is_action_pressed("shoot") and fire_timer.is_stopped():
-		shoot()
 
-#GUN
+	if Input.is_action_pressed("melee") and fire_timer.is_stopped():
+		attack()
+
+#AIMING / ORBIT — identical to gun.gd
 func _handle_aiming():
 	var camera = get_viewport().get_camera_3d()
 	var mouse_pos = get_viewport().get_mouse_position()
@@ -27,8 +27,7 @@ func _handle_aiming():
 	var dir = camera.project_ray_normal(mouse_pos)
 	var plane = Plane(Vector3.UP, player.global_transform.origin.y)
 	var mouse_world_pos = plane.intersects_ray(from, dir)
-	
-	#GUN ORBIT AXIS PLAYER
+
 	if mouse_world_pos != null:
 		var player_to_mouse = mouse_world_pos - player.global_transform.origin
 		player_to_mouse.y = 0
@@ -37,12 +36,13 @@ func _handle_aiming():
 		rotation.x = 0
 		rotation.z = 0
 
-#SHOOTING
-func shoot():
-	if bullet == null:
+#MELEE
+func attack():
+	if melee_bullet == null:
 		return
-		
-	var bullet = bullet.instantiate()
-	get_tree().root.add_child(bullet)
-	bullet.global_transform = muzzle.global_transform
+
+	var hit = melee_bullet.instantiate()
+	get_tree().root.add_child(hit)
+	hit.global_transform = global_transform
+	hit.global_transform.origin += -global_transform.basis.z * melee_reach
 	fire_timer.start()

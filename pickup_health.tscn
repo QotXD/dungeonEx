@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d7xf6cyb488y"]
+
+[ext_resource type="Script" uid="uid://dgy6j4nwftack" path="res://scripts/pickup_health.gd" id="1_iem78"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_bhunq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_riqys"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="pickup_health" type="Area3D" unique_id=157783545]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 0, 0, 0)
+collision_mask = 16
+script = ExtResource("1_iem78")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=801590786]
+shape = SubResource("SphereShape3D_bhunq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1072368689]
+mesh = SubResource("SphereMesh_bhunq")
+surface_material_override/0 = SubResource("StandardMaterial3D_riqys")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

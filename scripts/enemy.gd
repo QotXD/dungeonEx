@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@onready var player = $Player
+@onready var player: CharacterBody3D = get_tree().get_first_node_in_group("player")
 @onready var Hitbox: Area3D = $Hitbox
 
 const SPEED = 1.33
@@ -9,7 +9,7 @@ const JUMP_VELOCITY = 4.0
 const FALL_GRAVITY_MULT = 1.2
 const LOW_JUMP_GRAVITY_MULT = 3.2
 
-const MAX_HEALTH = 3
+const MAX_HEALTH = 3.0
 var health = MAX_HEALTH
 
 # COMBAT STATS
@@ -19,13 +19,6 @@ const CRITICAL_DAMAGE = 2.0
 const CRITICAL_CHANCE = 1.0
 @export var knockback_force: float = 9.0
 
-func _ready() -> void:
-	# Locate player in the scene
-	player = get_tree().get_first_node_in_group("player")
-	
-	# Connect Hitbox signal for INSTANT Frame 0 damage/knockback on touch
-	if Hitbox:
-		Hitbox.body_entered.connect(_on_hitbox_body_entered)
 
 # 1. Fires INSTANTLY on frame 0 of contact
 func _on_hitbox_body_entered(body: Node3D) -> void:

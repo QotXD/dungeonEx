@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c5pxjj6j0w2ns" path="res://gun.tscn" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://pfd4ds7qawaq" path="res://icon.svg" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://k2whaugk54vo" path="res://melee.tscn" id="3_i3pqv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3pqv"]
 albedo_texture = ExtResource("1_onrkg")
@@ -11,7 +12,7 @@ albedo_texture = ExtResource("1_onrkg")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bhunq"]
 
 [node name="Player" type="CharacterBody3D" unique_id=2107791308]
-collision_layer = 10
+collision_layer = 26
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=856312979]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -32,3 +33,6 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1866728774]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_bhunq")
+
+[node name="Melee" parent="." unique_id=1846495926 instance=ExtResource("3_i3pqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15633756, 0.44211006)

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dyo8wr84kfq6f"]
+
+[ext_resource type="Script" uid="uid://dydwpigsrwmqh" path="res://scripts/box.gd" id="1_1s18p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lec1x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lec1x"]
+albedo_color = Color(0.7144973, 0.4145875, 5.7756904e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+
+[node name="BreakableBox" type="StaticBody3D" unique_id=1047809777]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_mask = 8
+script = ExtResource("1_1s18p")
+
+[node name="BoxShape3D" type="CollisionShape3D" parent="." unique_id=27582853]
+shape = SubResource("BoxShape3D_lec1x")
+
+[node name="BoxMesh" type="MeshInstance3D" parent="." unique_id=1001995091]
+material_override = SubResource("StandardMaterial3D_lec1x")
+mesh = SubResource("BoxMesh_bhunq")

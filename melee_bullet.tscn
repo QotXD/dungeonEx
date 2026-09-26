@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://um1pw47lfuvj"]
+
+[ext_resource type="Script" uid="uid://dqy1fdp1s4cq5" path="res://scripts/melee_bullet.gd" id="1_8vmll"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_thyld"]
+
+[sub_resource type="TextMesh" id="TextMesh_8vmll"]
+text = "melee"
+font_size = 32
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gt438"]
+albedo_color = Color(1, 0.7372549, 0.16470589, 1)
+
+[node name="meleeBullet" type="Area3D" unique_id=1934810341]
+collision_mask = 5
+script = ExtResource("1_8vmll")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=148885099]
+shape = SubResource("SphereShape3D_thyld")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=270776138]
+transform = Transform3D(1.5, 0, 0, 0, -6.556708e-08, -1.5, 0, 1.5, -6.556708e-08, 0, 0, 0)
+mesh = SubResource("TextMesh_8vmll")
+surface_material_override/0 = SubResource("StandardMaterial3D_gt438")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
